@@ -1,0 +1,4 @@
+interface:
+  display_name: "Spec Reviewer"
+  short_description: "Review baseline and change specifications for readiness"
+  default_prompt: "Use $spec-reviewer to assess this baseline or change specification for contextual readiness."

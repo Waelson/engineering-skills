@@ -1,6 +1,6 @@
 # Template de Especificação de Software
 
-Use este template como ponto de partida, não como uma checklist obrigatória. Omita seções que não se aplicam e adicione seções específicas do domínio quando elas melhorarem a capacidade de implementação. Preserve explicitamente as informações desconhecidas em vez de inventar fatos.
+Use este template como um conjunto adaptativo de seções, não como uma checklist obrigatória. Primeiro determine o artefato conforme [artifact-convention.md](artifact-convention.md). Omita seções que não se aplicam e adicione seções específicas do domínio quando elas melhorarem a capacidade de implementação. Preserve explicitamente as informações desconhecidas em vez de inventar fatos.
 
 Escreva os títulos e o conteúdo no idioma do usuário, a menos que ele solicite outro idioma ou que o repositório tenha um idioma estabelecido para a documentação. Uma escolha explícita do usuário prevalece sobre a convenção do repositório. Não traduza nem localize identificadores estruturais como `FR-001`, `NFR-001`, `AC-001-01`, `ASSUMPTION-001` e `OPEN-QUESTION-001`.
 
@@ -14,14 +14,39 @@ Escreva os títulos e o conteúdo no idioma do usuário, a menos que ele solicit
 - **Criada em:** <data>
 - **Última atualização:** <data>
 - **Artefatos relacionados:** <issues, documentos, ADRs, designs>
+- **Tipo da specification:** BASELINE | CHANGE
+- **Contexto de desenvolvimento:** GREENFIELD | EVOLUTION | MIGRATION
+- **Status da baseline:** ESTABLISHED | PARTIAL | ABSENT <somente para change specs>
 
 ## Contexto
 
 Descreva o sistema atual, o contexto do usuário ou do negócio, as evidências relevantes do repositório e o evento que motiva este trabalho.
 
+## Estado Atual
+
+Use em evolution ou migration para descrever somente o comportamento vigente relevante à mudança. Quando a baseline estiver ausente ou parcial, declare que esse estado foi reconstruído de evidências da implementação e não representa automaticamente intenção de negócio confirmada.
+
+## Evidências do Estado Atual
+
+- `<path para baseline, ADR, contrato público, teste, implementação, configuração ou documentação>`
+
+Inclua quando a proveniência do estado atual for importante, especialmente em brownfield sem baseline.
+
 ## Definição do Problema
 
 Declare o problema e seu impacto sem prescrever uma implementação.
+
+## Mudança Proposta
+
+Use em change specs para descrever o delta pretendido sem confundi-lo com o estado vigente.
+
+## Estado Alvo
+
+Use em evolution ou migration quando explicitar o resultado final reduzir ambiguidades.
+
+## Estado de Transição
+
+Use em migrations quando o período intermediário tiver comportamento, riscos ou obrigações próprios.
 
 ## Objetivos
 
@@ -51,6 +76,12 @@ Não expresse uma premissa como um requisito confirmado. Quando for útil, decla
 
 - CONSTRAINT-001: <limite técnico, de negócio, jurídico ou operacional estabelecido>
 
+## Comportamento Existente a Preservar
+
+- <contrato, semântica, garantia ou expectativa relevante à mudança>
+
+Use em evolution ou migration; não documente o sistema inteiro.
+
 ## Requisitos Funcionais
 
 - FR-001: <comportamento observável, ator, condições e resultado>
@@ -63,6 +94,18 @@ Cada requisito deve ser claro, verificável, testável e suficientemente preciso
 - NFR-001: <requisito mensurável de qualidade, segurança, confiabilidade, conformidade ou desempenho>
 
 Não escreva requisitos vagos como “deve ser rápido” nem invente limites. Se uma meta for desconhecida, registre-a em **Questões Abertas** ou **Premissas**.
+
+## Requisitos de Migração
+
+- MIG-001: <obrigação verificável da transformação>
+
+Use somente em migrations quando IDs específicos melhorarem a rastreabilidade.
+
+## Requisitos de Compatibilidade
+
+- COMPAT-001: <comportamento ou consumidor que deve permanecer compatível>
+
+Use em evolution ou migration quando necessário; não crie requisitos de compatibilidade artificiais em greenfield.
 
 ## Requisitos de API / Interface
 
@@ -98,6 +141,24 @@ Descreva a compatibilidade retroativa ou futura, os clientes ou as versões comp
 
 Descreva os requisitos de migração, implantação gradual, sinalizadores de funcionalidade, preenchimento retroativo de dados, reversibilidade, reversão e comunicação, quando aplicável.
 
+### Migração de Dados
+
+### Coexistência
+
+### Reconciliação
+
+### Critérios de Cutover
+
+### Requisitos de Rollback
+
+### Descontinuação
+
+Use apenas os subtópicos relevantes à migration.
+
+## Riscos de Regressão
+
+- <comportamento vigente que pode ser degradado pela mudança e como verificá-lo>
+
 ## Critérios de Aceitação
 
 Vincule cada critério a um ou mais requisitos e torne o resultado esperado objetivamente verificável.
@@ -121,3 +182,17 @@ Classifique uma questão como bloqueante somente quando não for possível produ
 - ADR-NEEDED-001: <decisão que deve ser tratada separadamente, opções disponíveis e por que ela importa>
 
 Use esta seção quando o requisito for conhecido, mas o mecanismo arquitetural não. Por exemplo, “processar eventos de forma assíncrona” não implica o uso de Kafka, a menos que Kafka já seja uma restrição ou decisão estabelecida.
+
+## Seleção adaptativa de seções
+
+### Baseline / Greenfield
+
+Normalmente use Contexto, Definição do Problema, Objetivos, Não Objetivos, Escopo, Requisitos, Segurança, Confiabilidade, Observabilidade, Critérios de Aceitação e Questões Abertas. Não adicione estado atual, migração ou compatibilidade sem necessidade real.
+
+### Evolution
+
+Acrescente quando aplicável Estado Atual, Evidências do Estado Atual, Mudança Proposta, Estado Alvo, Comportamento Existente a Preservar, Requisitos de Compatibilidade e Riscos de Regressão.
+
+### Migration
+
+Acrescente quando aplicável Estado Atual, Estado de Transição, Estado Alvo, Requisitos de Migração e Compatibilidade, Migração de Dados, Coexistência, Reconciliação, Cutover, Rollback, Descontinuação e Riscos de Regressão.

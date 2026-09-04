@@ -1,23 +1,24 @@
 ---
 name: spec-author
-description: Crie ou atualize especificações de software prontas para implementação usando Spec-Driven Development. Use quando solicitarem a criação de uma especificação ou SPEC.md, a formalização de uma funcionalidade ou de requisitos, a preparação de um trabalho antes da implementação, a definição de requisitos funcionais ou não funcionais ou a escrita de critérios de aceitação. Não use para depuração, implementação direta, revisão de código isolada ou uma pequena alteração de código que já esteja suficientemente especificada.
+description: Crie ou atualize especificações de software prontas para implementação usando Spec-Driven Development, incluindo baselines, mudanças evolutivas e migrações sob docs/. Use quando solicitarem uma specification, a formalização de uma funcionalidade ou de requisitos, a preparação de trabalho antes da implementação, critérios de aceitação ou a reconciliação explícita da baseline. Não use para depuração, implementação, revisão de código ou planejamento de arquitetura.
 ---
 
 # Autor de Especificações
 
-Transforme um problema, necessidade, funcionalidade ou mudança de software em uma especificação que possa orientar uma tarefa posterior de implementação. Produza ou atualize o arquivo `SPEC.md`; não implemente o software.
+Transforme um problema, necessidade, funcionalidade ou mudança de software em uma especificação que possa orientar uma tarefa posterior de implementação. Produza ou atualize somente artefatos de specification sob `docs/`; não implemente software nem crie arquitetura, ADRs, planos de implementação ou reviews.
 
 ## Fluxo de trabalho
 
-1. Leia todos os arquivos `AGENTS.md` aplicáveis e, em seguida, inspecione o repositório e a documentação relacionada à funcionalidade. Preserve a terminologia, as restrições e as decisões estabelecidas.
-2. Entenda o problema e identifique as partes interessadas e o contexto disponíveis. Faça somente perguntas que impeçam a criação de uma primeira versão coerente; classifique as demais informações desconhecidas como questões abertas importantes ou detalhes opcionais.
-3. Separe as evidências em fatos, requisitos, restrições, premissas e questões abertas. Nunca transforme silenciosamente uma premissa em um requisito confirmado.
-4. Defina o problema, os objetivos, os não objetivos e o escopo antes de detalhar o comportamento.
-5. Escreva os requisitos funcionais como `FR-001`, `FR-002` e assim por diante. Escreva os requisitos não funcionais como `NFR-001`, `NFR-002` e assim por diante. Cada requisito deve ser claro, verificável, testável e suficientemente preciso para uma implementação posterior.
-6. Aborde interfaces e dados quando forem relevantes e, depois, avalie restrições, dependências, modos de falha, segurança, observabilidade, compatibilidade e implantação gradual ou migração.
-7. Escreva critérios de aceitação mensuráveis vinculados aos IDs dos requisitos, usando identificadores como `AC-003-01`. Prefira Dado/Quando/Então quando esse formato tornar o comportamento mais claro.
-8. Registre informações importantes não resolvidas como premissas ou questões abertas numeradas. Produza uma primeira versão útil em vez de buscar respostas exaustivas quando as informações ausentes não forem bloqueantes.
-9. Revise o resultado em busca de contradições, linguagem vaga, escolhas arquiteturais ocultas, critérios não testáveis e falta de rastreabilidade.
+1. Leia todos os `AGENTS.md` aplicáveis e inspecione a estrutura de `docs/`, a documentação relacionada e o contexto relevante do repositório.
+2. Leia integralmente [references/artifact-convention.md](references/artifact-convention.md). Classifique, sem perguntar quando as evidências forem suficientes, o contexto (`GREENFIELD`, `EVOLUTION` ou `MIGRATION`), o status da baseline (`ESTABLISHED`, `PARTIAL` ou `ABSENT`) e a operação (`CREATE_BASELINE`, `CREATE_CHANGE_SPEC`, `UPDATE_CHANGE_SPEC` ou `RECONSTRUCT_BASELINE`).
+3. Selecione exatamente um artefato de specification conforme a convenção. Respeite uma convenção conflitante documentada em `AGENTS.md`; caso contrário, nunca crie `SPEC.md` na raiz.
+4. Inspecione apenas o contexto necessário. Em brownfield, estabeleça o estado atual a partir da baseline e de evidências do projeto; não trate automaticamente o código como intenção correta de negócio.
+5. Identifique o estado atual, a mudança proposta e o comportamento existente a preservar quando aplicável. Separe fatos, requisitos, restrições, premissas e questões abertas.
+6. Defina problema, objetivos, não objetivos, escopo e requisitos. Use `FR-*` e `NFR-*`; use `MIG-*` e `COMPAT-*` quando trouxerem rastreabilidade útil para migração ou compatibilidade.
+7. Avalie interfaces, dados, dependências, modos de falha, segurança, observabilidade, riscos de regressão, compatibilidade e transição somente quando relevantes.
+8. Escreva critérios de aceitação mensuráveis vinculados aos requisitos, usando IDs como `AC-003-01`. Prefira Dado/Quando/Então quando tornar o comportamento mais claro.
+9. Preserve IDs e histórico lógico ao atualizar uma change spec. Registre informações importantes não resolvidas como `ASSUMPTION-*` ou `OPEN-QUESTION-*` sem bloquear desnecessariamente a primeira versão.
+10. Revise o resultado em busca de contradições, linguagem vaga, escolhas arquiteturais ocultas, critérios não testáveis, falta de rastreabilidade e path incorreto.
 
 ## Limites
 
@@ -26,5 +27,7 @@ Transforme um problema, necessidade, funcionalidade ou mudança de software em u
 - Especifique o comportamento necessário sem selecionar desnecessariamente uma arquitetura irreversível. Se uma decisão como broker, banco de dados ou protocolo ainda não estiver definida por uma restrição, adicione-a em **Decisões Arquiteturais Necessárias** e recomende um ADR separado.
 - Diferencie o que é conhecido do que está sendo proposto. Cite evidências do repositório com caminhos de arquivos quando elas sustentarem materialmente a especificação.
 - Adapte o documento à mudança: omita seções irrelevantes, mas não omita riscos relevantes ou informações operacionais apenas para encurtar a especificação.
+- Não reconstrua uma baseline completa apenas porque ela não existe ou é parcial. Não incorpore uma change spec ativa à baseline sem intenção explícita do usuário.
+- Não duplique a mesma specification em paths diferentes.
 
-Antes de criar ou atualizar uma especificação, leia [references/spec-template.md](references/spec-template.md) para conhecer a estrutura de saída, os identificadores e o padrão dos critérios de aceitação.
+Antes de escrever, leia [references/spec-template.md](references/spec-template.md) para selecionar as seções adaptativas. Consulte [references/artifact-scenarios.md](references/artifact-scenarios.md) quando precisar confirmar o roteamento esperado pelos cenários de teste.

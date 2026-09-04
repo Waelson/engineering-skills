@@ -11,6 +11,7 @@ Um toolkit de Spec-Driven Development para preparar trabalhos de software antes 
 Skills disponíveis:
 
 - `spec-author` — transforma problemas, necessidades, funcionalidades e mudanças de software em especificações prontas para implementação.
+- `spec-reviewer` — revisa especificações em busca de ambiguidades, lacunas, inconsistências e riscos de implementação.
 
 ## Instalação
 
