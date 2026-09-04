@@ -17,6 +17,7 @@ Escreva os títulos e o conteúdo no idioma do usuário, a menos que ele solicit
 - **Tipo da specification:** BASELINE | CHANGE
 - **Contexto de desenvolvimento:** GREENFIELD | EVOLUTION | MIGRATION
 - **Status da baseline:** ESTABLISHED | PARTIAL | ABSENT <somente para change specs>
+- **Status do discovery:** READY_FOR_DRAFT | READY_FOR_SPEC <quando útil>
 
 ## Contexto
 

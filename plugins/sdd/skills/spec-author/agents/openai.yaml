@@ -1,4 +1,4 @@
 interface:
   display_name: "Spec Author"
-  short_description: "Create baseline and change specifications under docs/"
-  default_prompt: "Use $spec-author to create the appropriate baseline or change specification under docs/."
+  short_description: "Discover requirements and author SDD specifications"
+  default_prompt: "Use $spec-author to clarify this need through requirements discovery and produce the appropriate SDD specification."
