@@ -1,0 +1,4 @@
+interface:
+  display_name: "Spec Author"
+  short_description: "Create implementation-ready SDD specifications"
+  default_prompt: "Use $spec-author to create an implementation-ready software specification."
