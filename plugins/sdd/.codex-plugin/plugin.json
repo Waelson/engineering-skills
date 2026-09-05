@@ -1,7 +1,7 @@
 {
   "name": "sdd",
   "version": "0.1.0",
-  "description": "Reusable Spec-Driven Development workflows from repository bootstrap through validated incremental implementation.",
+  "description": "Reusable Spec-Driven Development workflows from repository bootstrap through independent implementation verification.",
   "author": {
     "name": "Waelson",
     "url": "https://github.com/Waelson"
@@ -13,8 +13,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Spec-Driven Development",
-    "shortDescription": "Prepare, specify, plan, test, and implement changes.",
-    "longDescription": "Reusable Spec-Driven Development workflows for repository preparation, requirements, review, architecture, decisions, planning, test design, and incremental implementation.",
+    "shortDescription": "Specify, implement, and independently verify changes.",
+    "longDescription": "Reusable Spec-Driven Development workflows spanning repository preparation, requirements, review, architecture, decisions, planning, test design, implementation, and independent verification.",
     "developerName": "Waelson",
     "category": "Development",
     "capabilities": ["Write"],
@@ -27,7 +27,8 @@
       "Use $adr-author to clarify an architectural decision and record it with the appropriate status.",
       "Use $implementation-planner to turn confirmed specifications and designs into a traceable implementation plan.",
       "Use $test-designer to derive a traceable test strategy from requirements, decisions, and implementation plans.",
-      "Use $implementation to execute a validated SDD plan incrementally with continuous verification."
+      "Use $implementation to execute a validated SDD plan incrementally with continuous verification.",
+      "Use $implementation-verifier to independently verify the implementation against SDD artifacts and evidence."
     ]
   }
 }

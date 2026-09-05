@@ -1,0 +1,4 @@
+interface:
+  display_name: "Implementation Verifier"
+  short_description: "Verify SDD implementation compliance independently"
+  default_prompt: "Use $implementation-verifier to independently verify this implementation against its SDD artifacts and acceptance criteria."
