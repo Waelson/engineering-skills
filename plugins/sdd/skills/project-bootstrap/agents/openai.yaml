@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Bootstrap"
+  short_description: "Prepare repositories for the SDD workflow"
+  default_prompt: "Use $project-bootstrap to prepare this repository for the SDD workflow with stable agent instructions and documentation directories."

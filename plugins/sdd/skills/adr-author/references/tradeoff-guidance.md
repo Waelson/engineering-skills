@@ -24,7 +24,7 @@ Rationale: atende aos drivers confirmados ...
 Status: Awaiting confirmation
 ```
 
-Mantenha-a como `RECOMMENDED OPTION` até existir confirmação. Se não houver evidência suficiente para recomendar, apresente a comparação e a pergunta que falta.
+Mantenha-a como `RECOMMENDED OPTION` até existir confirmação explícita. `Recommended != Accepted`. Se não houver evidência suficiente para recomendar, apresente a comparação e a pergunta que falta; nunca invente uma alternativa para completar a análise.
 
 ## Consequências e reversibilidade
 

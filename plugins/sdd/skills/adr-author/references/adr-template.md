@@ -8,6 +8,9 @@ Use somente seções relevantes. Preserve desconhecidos e proveniência; não pr
 ## Status
 Proposed | Accepted | Rejected | Superseded | Deprecated
 
+## Fonte da Decisão
+<confirmação explícita do usuário ou fonte formal inequívoca; obrigatória para Accepted>
+
 ## Data
 <YYYY-MM-DD>
 
@@ -38,4 +41,4 @@ Proposed | Accepted | Rejected | Superseded | Deprecated
 ## Decisões Relacionadas
 ```
 
-Para `Proposed`, deixe explícitos a opção recomendada, assumptions, questões abertas e o que falta para aceitação. Para `Accepted`, inclua fonte da confirmação e trade-offs aceitos. Não use justificativa genérica como “é escalável”; relacione a escolha aos drivers e evidências reais.
+Para `Proposed`, deixe explícitos a opção recomendada, assumptions, questões abertas e o que falta para aceitação. Para `Accepted`, inclua fonte da confirmação e trade-offs aceitos. Um `Accepted` sem fonte de decisão é inválido. Não use justificativa genérica como “é escalável”; relacione a escolha aos drivers e evidências reais.

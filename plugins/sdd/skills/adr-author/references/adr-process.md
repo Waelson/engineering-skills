@@ -55,7 +55,7 @@ Consulte as fontes proporcionais à decisão antes de perguntar:
 - baseline e change `ARCHITECTURE.md` para contexto e `Architecture Decision Required`;
 - ADRs para decisões existentes e relações.
 
-Uma recomendação da `$architecture-designer` é insumo, não confirmação. Um finding indefinido ou contraditório não pode sustentar silenciosamente um ADR `Accepted`.
+Uma recomendação da `$architecture-designer` é insumo, não confirmação. Somente evidência explícita como `Decision Status: Confirmed` acompanhada de fonte confiável evita nova confirmação. Um finding indefinido ou contraditório não pode sustentar silenciosamente um ADR `Accepted`.
 
 ## Rastreabilidade
 
@@ -74,6 +74,9 @@ Related Architecture:
 
 Related Decisions:
 - ADR-002
+
+Decision Source:
+- User confirmation | <fonte formal inequívoca>
 ```
 
 Use somente relações reais. A seção `Decisão` diz o que foi escolhido; `Justificativa` explica por que essa escolha atende aos drivers confirmados.

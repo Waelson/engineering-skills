@@ -1,4 +1,4 @@
 interface:
   display_name: "ADR Author"
-  short_description: "Discover decisions and author traceable ADRs"
-  default_prompt: "Use $adr-author to clarify an architectural decision and create a traceable ADR with the appropriate status."
+  short_description: "Facilitate decisions before authoring ADRs"
+  default_prompt: "Use $adr-author to conduct iterative decision discovery, facilitate explicit confirmation, and then record the ADR with the appropriate status."

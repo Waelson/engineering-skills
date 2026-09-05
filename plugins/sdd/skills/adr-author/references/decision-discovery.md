@@ -2,7 +2,18 @@
 
 ## Princípio
 
-Descubra por que uma decisão é necessária antes de comparar tecnologias ou escrever o ADR. Não transforme `UNKNOWN` em fato assumido nem opção ou recomendação em decisão.
+Descubra por que uma decisão é necessária antes de comparar tecnologias ou escrever o ADR. Não transforme `UNKNOWN` em fato assumido nem opção ou recomendação em decisão. A interação acontece primeiro na conversa; não gere arquivo a cada rodada.
+
+## Problem framing
+
+Formule a decisão como necessidade ou capacidade a definir, não como duelo entre soluções sugeridas. Separe:
+
+```text
+Necessidade: definir como propagar atualizações entre A e B.
+Solução candidata: Kafka.
+```
+
+Antes de enquadrar como “Kafka vs RabbitMQ”, confirme que mensageria é realmente uma classe de solução aplicável. Investigue requisitos que podem mudar o espaço de alternativas, como sincronismo, bloqueio do produtor, replay, ordering e delivery guarantee.
 
 ## Classificação obrigatória
 
@@ -33,15 +44,21 @@ Registre a proveniência material, como `NFR-004`, `ADR-002`, Platform Constrain
 - `IMPORTANT`: melhora a análise, mas pode permanecer aberta em ADR `Proposed`.
 - `OPTIONAL`: pode ser resolvida depois e não deve atrasar o draft.
 
-Faça normalmente 2 a 5 perguntas por rodada, começando pelas que eliminam alternativas ou alteram a decisão. Para síncrono versus assíncrono, investigue conforme necessário acoplamento de disponibilidade, replay, consistência, ordering, durability e infraestrutura padronizada.
+Faça 1 a 4 perguntas por rodada, começando pelas `BLOCKING` que eliminam alternativas ou alteram a decisão. Use as respostas para determinar a rodada seguinte; não apresente questionário extenso. Para síncrono versus assíncrono, investigue conforme necessário acoplamento de disponibilidade, replay, consistência, ordering, durability e infraestrutura padronizada.
 
 ## Readiness
 
-- `DECISION_DISCOVERY_REQUIRED`: faltam contexto, driver, constraint ou resposta crítica. Não produza ADR final.
-- `READY_FOR_ADR_DRAFT`: há base para documentar um ADR `Proposed`, com assumptions e questões abertas explícitas.
-- `DECISION_CONFIRMED`: a escolha foi confirmada por fonte aceitável e pode ser registrada como `Accepted` quando aplicável.
+- `DECISION_DISCOVERY_REQUIRED`: faltam informações que podem alterar a escolha. Pergunte; não produza ADR nem recomende se faltarem drivers essenciais.
+- `DECISION_READY_FOR_EVALUATION`: há base para comparar alternativas, recomendar quando possível e pedir uma decisão explícita ao usuário.
+- `DECISION_CONFIRMED`: a alternativa foi explicitamente escolhida ou está formalmente confirmada por fonte confiável. Pode ser registrada como `Accepted` quando aplicável.
 
-Um pedido de draft permite `READY_FOR_ADR_DRAFT`, mas não autoriza preencher lacunas. Se a escolha depender de requirement ausente, registre `Decision blocked by missing requirement`, explique o impacto e recomende `$spec-author`.
+Um pedido explícito de draft permite criar `Proposed`, mas não muda a readiness nem autoriza preencher lacunas. Se a escolha depender de requirement ausente, registre `Decision blocked by missing requirement`, explique o impacto e recomende `$spec-author`.
+
+## Evidências e conflitos
+
+Uma constraint exige fonte. Não presuma Kubernetes, Kafka corporativo ou qualquer arquitetura atual. Se specification, arquitetura, ADR, código e configuração divergirem, registre o conflito e pergunte quando ele afetar a decisão; não escolha silenciosamente uma fonte.
+
+Registre números desconhecidos como `OPEN-DECISION-QUESTION-*`. Nunca invente RPS, latência, throughput, partições, réplicas, timeout, retries, TTL, retention, custo ou volume.
 
 ## Checkpoint
 

@@ -10,6 +10,7 @@ Um toolkit de Spec-Driven Development para preparar trabalhos de software antes 
 
 Skills disponíveis:
 
+- `project-bootstrap` — prepara repositórios para adotar o workflow SDD, com instruções estáveis para agentes e estrutura documental mínima.
 - `spec-author` — transforma problemas, necessidades, funcionalidades e mudanças de software em especificações prontas para implementação.
 - `spec-reviewer` — revisa especificações em busca de ambiguidades, lacunas, inconsistências e riscos de implementação.
 - `architecture-designer` — transforma specifications maduras em propostas de arquitetura técnica rastreáveis e justificadas.

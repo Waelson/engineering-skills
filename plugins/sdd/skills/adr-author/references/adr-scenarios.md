@@ -2,48 +2,70 @@
 
 Use estes cenários como testes normativos de decisão.
 
-## 1. Decisão insuficientemente definida
-Entrada: “Crie um ADR para usar Kafka.”
-- Readiness: `DECISION_DISCOVERY_REQUIRED`.
-- Esperado: não criar `Accepted`; descobrir a necessidade e perguntar se Kafka é constraint ou `PROPOSED OPTION`.
+## 1. Pedido direto para escolher tecnologia
 
-## 2. Decisão explicitamente confirmada
-O usuário afirma que Kafka foi decidido para propagação de eventos, e spec e arquitetura sustentam os drivers.
+Entrada: “Crie um ADR escolhendo Kafka ou RabbitMQ.”
+
+- Readiness inicial: `DECISION_DISCOVERY_REQUIRED`.
+- Esperado: enquadrar a necessidade, iniciar discovery, não escolher automaticamente e não criar `Accepted`.
+
+## 2. Recomendação sem confirmação
+
+`ARCHITECTURE.md` recomenda Kafka, mas não registra decisão confirmada.
+
+- Classificação: `RECOMMENDED OPTION`.
+- Esperado: apresentar o checkpoint e pedir confirmação; não criar `Accepted`.
+
+## 3. Usuário confirma
+
+Após a avaliação, o usuário declara: “Vamos com Kafka.”
+
 - Readiness: `DECISION_CONFIRMED`.
-- Esperado: criar ADR `Accepted`, com drivers, alternativas, consequências, trade-offs e rastreabilidade.
+- Esperado: ADR `Accepted` pode ser criado, com `Decision Source: User confirmation`.
 
-## 3. Recomendação arquitetural
-`ARCHITECTURE.md` recomenda event-driven, sem confirmação da escolha.
-- Esperado: no máximo ADR `Proposed`; recommendation não se torna decision.
+## 4. Informação blocking ausente
 
-## 4. Requirement ausente
-A decisão depende de ordering, mas o requirement não existe.
-- Esperado: discovery; não inventar ordering; registrar bloqueio por requisito ausente e recomendar `$spec-author` quando crítico.
+Ordering pode alterar materialmente a escolha, mas não está definido.
 
-## 5. ADR existente
-A mesma decisão já está registrada.
-- Esperado: não criar duplicata; informar o ADR existente.
+- Readiness: `DECISION_DISCOVERY_REQUIRED`.
+- Esperado: perguntar a necessidade e granularidade de ordering; não decidir nem recomendar prematuramente.
 
-## 6. Decisão substituída
-Uma nova escolha substitui ADR aceito anterior.
-- Esperado: criar novo ADR, usar `Supersedes` e preservar o histórico anterior.
+## 5. Usuário pede draft
 
-## 7. Technology bias
-Entrada: “Redis ou Kafka?”
-- Esperado: investigar problema, drivers e constraints antes de comparar; não escolher por preferência.
+Entrada: “Gere um ADR preliminar enquanto decidimos.”
 
-## 8. Draft solicitado
-Entrada: “Faça um ADR preliminar com o que temos.”
-- Readiness: `READY_FOR_ADR_DRAFT`, quando houver base coerente.
-- Esperado: `Status: Proposed`, com assumptions e open questions explícitas.
+- Esperado: criar somente `Proposed`, com decisão não confirmada, recommendation atual, assumptions, questões abertas e condições de aceitação.
+
+## 6. Decisão já formalizada
+
+Fonte confiável registra `Decision Status: Confirmed` e `Decision Source: User Confirmation`.
+
+- Readiness: `DECISION_CONFIRMED`.
+- Esperado: não pedir nova confirmação; esclarecer apenas o racional ausente e documentar.
+
+## 7. Solução inicialmente sugerida
+
+Entrada: “Acho que Redis talvez resolva.”
+
+- Classificação: `PROPOSED OPTION`.
+- Esperado: descobrir a necessidade e alternativas; nunca tratar Redis como constraint ou `Accepted`.
+
+## 8. Nenhuma alternativa clara
+
+O contexto não permite identificar opções plausíveis.
+
+- Readiness: `DECISION_DISCOVERY_REQUIRED`.
+- Esperado: continuar discovery; não inventar opções artificiais.
 
 ## Asserções transversais
 
-- lacunas materiais tornam a interação iterativa;
-- fatos, constraints, assumptions, questões, opções, recomendações e decisões confirmadas permanecem separados;
-- requisitos, contexto, tecnologias e números não são inventados;
-- ADR `Accepted` exige confirmação;
-- ADRs ficam em `docs/architecture/adr/` por padrão;
-- numeração deriva da inspeção dos arquivos existentes;
-- mudanças de decisão criam novo ADR e preservam o anterior;
-- spec, review, architecture e ADRs existentes são consultados antes de perguntas desnecessárias.
+- discovery iterativo e framing precedem evaluation e autoria;
+- perguntas são feitas em rodadas de 1 a 4, priorizando `BLOCKING`;
+- `PROPOSED OPTION`, `RECOMMENDED OPTION` e `CONFIRMED DECISION` não são equivalentes;
+- `Recommended != Accepted`;
+- silêncio, ausência de objeção e wording ambíguo não confirmam decisão;
+- ADR `Accepted` exige `DECISION_CONFIRMED` e fonte explícita;
+- recommendation da `$architecture-designer` não confirma decisão;
+- requirements, constraints, arquitetura atual, tecnologia e métricas não são inventados;
+- arquivos não são gerados a cada rodada de discovery;
+- decisões substituídas criam novo ADR com `Supersedes` e preservam histórico.
