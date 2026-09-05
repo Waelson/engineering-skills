@@ -1,4 +1,4 @@
 interface:
   display_name: "Implementation"
   short_description: "Implement validated SDD changes incrementally"
-  default_prompt: "Use $implementation to execute this validated SDD implementation plan incrementally with continuous verification."
+  default_prompt: "Use $implementation to execute this validated SDD plan and confirmed contracts incrementally, considering relevant security and reliability findings."
