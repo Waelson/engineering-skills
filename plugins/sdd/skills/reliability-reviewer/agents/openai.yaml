@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reliability Reviewer"
+  short_description: "Evidence-based reliability and failure reviews"
+  default_prompt: "Use $reliability-reviewer to review failure behavior, resilience, and capacity assumptions using repository evidence."
