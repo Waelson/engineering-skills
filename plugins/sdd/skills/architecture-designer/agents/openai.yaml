@@ -1,0 +1,4 @@
+interface:
+  display_name: "Architecture Designer"
+  short_description: "Facilitate architecture discovery and decisions"
+  default_prompt: "Use $architecture-designer to facilitate architecture discovery, compare options, and document confirmed decisions."

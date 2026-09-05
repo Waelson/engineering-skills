@@ -1,7 +1,7 @@
 {
   "name": "sdd",
   "version": "0.1.0",
-  "description": "Reusable Spec-Driven Development authoring and review workflows for software engineering.",
+  "description": "Reusable Spec-Driven Development discovery, review, and architecture workflows for software engineering.",
   "author": {
     "name": "Waelson",
     "url": "https://github.com/Waelson"
@@ -13,15 +13,16 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Spec-Driven Development",
-    "shortDescription": "Author and review implementation-ready specifications.",
-    "longDescription": "Reusable Spec-Driven Development workflows that create and review clear, testable software specifications before implementation.",
+    "shortDescription": "Discover, specify, review, and design software changes.",
+    "longDescription": "Reusable Spec-Driven Development workflows for requirements discovery, specification authoring, independent review, and traceable architecture design.",
     "developerName": "Waelson",
     "category": "Development",
     "capabilities": ["Write"],
     "websiteURL": "https://github.com/Waelson/engineering-skills",
     "defaultPrompt": [
       "Use $spec-author to prepare an implementation-ready specification.",
-      "Use $spec-reviewer to assess whether this specification is implementation-ready."
+      "Use $spec-reviewer to assess whether this specification is implementation-ready.",
+      "Use $architecture-designer to design a traceable architecture from this specification."
     ]
   }
 }
