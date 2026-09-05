@@ -13,6 +13,7 @@ Skills disponíveis:
 - `spec-author` — transforma problemas, necessidades, funcionalidades e mudanças de software em especificações prontas para implementação.
 - `spec-reviewer` — revisa especificações em busca de ambiguidades, lacunas, inconsistências e riscos de implementação.
 - `architecture-designer` — transforma specifications maduras em propostas de arquitetura técnica rastreáveis e justificadas.
+- `adr-author` — conduz discovery de decisões arquiteturais e registra ADRs rastreáveis com o status apropriado.
 
 ## Instalação
 
