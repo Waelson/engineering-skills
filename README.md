@@ -17,6 +17,7 @@ Skills disponíveis:
 - `adr-author` — conduz discovery de decisões arquiteturais e registra ADRs rastreáveis com o status apropriado.
 - `implementation-planner` — transforma specifications, arquitetura e ADRs confirmados em planos de implementação incrementais e rastreáveis.
 - `test-designer` — projeta estratégias e casos de teste rastreáveis, validando consistência entre requirements, decisões e implementação observada.
+- `implementation` — executa planos SDD incrementalmente, modificando código com validação contínua, controle de escopo e rastreabilidade.
 
 ## Instalação
 
