@@ -1,7 +1,7 @@
 {
   "name": "sdd",
   "version": "0.1.0",
-  "description": "Reusable Spec-Driven Development bootstrap, discovery, review, architecture, decision-record, and implementation-planning workflows.",
+  "description": "Reusable Spec-Driven Development bootstrap, discovery, review, architecture, decision, implementation-planning, and test-design workflows.",
   "author": {
     "name": "Waelson",
     "url": "https://github.com/Waelson"
@@ -13,8 +13,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Spec-Driven Development",
-    "shortDescription": "Prepare, specify, design, and plan software changes.",
-    "longDescription": "Reusable Spec-Driven Development workflows for repository preparation, requirements discovery, specification review, traceable architecture design, architectural decisions, and implementation planning.",
+    "shortDescription": "Prepare, specify, design, plan, and test changes.",
+    "longDescription": "Reusable Spec-Driven Development workflows for repository preparation, requirements discovery, specification review, architecture, decisions, implementation planning, and traceable test design.",
     "developerName": "Waelson",
     "category": "Development",
     "capabilities": ["Write"],
@@ -25,7 +25,8 @@
       "Use $spec-reviewer to assess whether this specification is implementation-ready.",
       "Use $architecture-designer to design a traceable architecture from this specification.",
       "Use $adr-author to clarify an architectural decision and record it with the appropriate status.",
-      "Use $implementation-planner to turn confirmed specifications and designs into a traceable implementation plan."
+      "Use $implementation-planner to turn confirmed specifications and designs into a traceable implementation plan.",
+      "Use $test-designer to derive a traceable test strategy from requirements, decisions, and implementation plans."
     ]
   }
 }

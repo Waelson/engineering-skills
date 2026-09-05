@@ -16,6 +16,7 @@ Skills disponíveis:
 - `architecture-designer` — transforma specifications maduras em propostas de arquitetura técnica rastreáveis e justificadas.
 - `adr-author` — conduz discovery de decisões arquiteturais e registra ADRs rastreáveis com o status apropriado.
 - `implementation-planner` — transforma specifications, arquitetura e ADRs confirmados em planos de implementação incrementais e rastreáveis.
+- `test-designer` — projeta estratégias e casos de teste rastreáveis, validando consistência entre requirements, decisões e implementação observada.
 
 ## Instalação
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Test Designer"
+  short_description: "Design traceable test strategies and cases"
+  default_prompt: "Use $test-designer to derive a traceable test strategy from confirmed requirements, decisions, and the implementation plan."
