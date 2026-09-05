@@ -1,0 +1,4 @@
+interface:
+  display_name: "Security Reviewer"
+  short_description: "Evidence-based iterative security reviews"
+  default_prompt: "Use $security-reviewer to conduct an evidence-based security review and identify unresolved risks and controls."

@@ -1,7 +1,7 @@
 {
   "name": "sdd",
   "version": "0.1.0",
-  "description": "Reusable Spec-Driven Development workflows from repository bootstrap and API design through independent implementation verification.",
+  "description": "Reusable Spec-Driven Development workflows from repository bootstrap and API design through security review and independent implementation verification.",
   "author": {
     "name": "Waelson",
     "url": "https://github.com/Waelson"
@@ -13,8 +13,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Spec-Driven Development",
-    "shortDescription": "Specify, design APIs, implement, and verify changes.",
-    "longDescription": "Reusable Spec-Driven Development workflows spanning repository preparation, requirements, review, architecture, API contract design, decisions, planning, test design, implementation, and independent verification.",
+    "shortDescription": "Specify, design, review security, and verify changes.",
+    "longDescription": "Reusable Spec-Driven Development workflows spanning repository preparation, requirements, review, architecture, API contract design, security review, decisions, planning, test design, implementation, and independent verification.",
     "developerName": "Waelson",
     "category": "Development",
     "capabilities": ["Write"],
@@ -25,6 +25,7 @@
       "Use $spec-reviewer to assess whether this specification is implementation-ready.",
       "Use $architecture-designer to design a traceable architecture from this specification.",
       "Use $api-designer to discover and design a traceable API contract without assuming requirements or protocols.",
+      "Use $security-reviewer to conduct an evidence-based security review and identify unresolved risks and controls.",
       "Use $adr-author to clarify an architectural decision and record it with the appropriate status.",
       "Use $implementation-planner to turn confirmed specifications and designs into a traceable implementation plan.",
       "Use $test-designer to derive a traceable test strategy from requirements, decisions, and implementation plans.",
