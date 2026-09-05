@@ -21,6 +21,7 @@ Skills disponíveis:
 - `implementation-planner` — transforma specifications, arquitetura e ADRs confirmados em planos de implementação incrementais e rastreáveis.
 - `test-designer` — projeta estratégias e casos de teste rastreáveis, validando consistência entre requirements, decisões e implementação observada.
 - `implementation` — executa planos SDD incrementalmente, modificando código com validação contínua, controle de escopo e rastreabilidade.
+- `code-reviewer` — revisa código e diffs de forma independente, priorizando bugs, regressões e riscos reais em vez de preferências pessoais.
 - `implementation-verifier` — verifica independentemente a aderência da implementação aos artefatos SDD e às evidências disponíveis.
 
 ## Instalação

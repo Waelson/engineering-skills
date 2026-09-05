@@ -1,0 +1,4 @@
+interface:
+  display_name: "Code Reviewer"
+  short_description: "Evidence-based reviews focused on real code risks"
+  default_prompt: "Use $code-reviewer to review this diff independently and report only evidence-backed bugs and material risks."
