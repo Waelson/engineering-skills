@@ -15,6 +15,7 @@ Skills disponíveis:
 - `spec-reviewer` — revisa especificações em busca de ambiguidades, lacunas, inconsistências e riscos de implementação.
 - `architecture-designer` — transforma specifications maduras em propostas de arquitetura técnica rastreáveis e justificadas.
 - `adr-author` — conduz discovery de decisões arquiteturais e registra ADRs rastreáveis com o status apropriado.
+- `implementation-planner` — transforma specifications, arquitetura e ADRs confirmados em planos de implementação incrementais e rastreáveis.
 
 ## Instalação
 
