@@ -1,0 +1,4 @@
+interface:
+  display_name: "API Designer"
+  short_description: "Design traceable APIs through guided discovery"
+  default_prompt: "Use $api-designer to discover and design a traceable API contract without assuming requirements or protocols."
